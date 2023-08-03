@@ -2,15 +2,44 @@
   "products": [
     {
       "id": 1,
-      "name": "product A"
+      "name": " Adidas A102 Đen Kẻ Trắng Phản Quang SF",
+      "price": 400000,
+      "original_price": 500000,
+      "image": "https://giayxshop.vn/wp-content/uploads/2023/03/z4159595927783_c64c2be5885dd21738773ad31d1539ba-600x600.jpg",
+      "description": "mô tả"
     },
     {
       "id": 2,
-      "name": "product B"
+      "name": " Adidas A102 Đen Kẻ Trắng Phản Quang SF 2",
+      "price": 400000,
+      "original_price": 500000,
+      "image": "https://giayxshop.vn/wp-content/uploads/2023/03/z4159595927783_c64c2be5885dd21738773ad31d1539ba-600x600.jpg",
+      "description": "mô tả"
     },
     {
-      "name": "Product C",
-      "id": 3
+      "id": 3,
+      "name": " Adidas A102 Đen Kẻ Trắng Phản Quang SF 3",
+      "price": 400000,
+      "original_price": 500000,
+      "image": "https://giayxshop.vn/wp-content/uploads/2023/03/z4159595927783_c64c2be5885dd21738773ad31d1539ba-600x600.jpg",
+      "description": "mô tả"
+    },
+    {
+      "id": 4,
+      "name": " Adidas A102 Đen Kẻ Trắng Phản Quang SF 4",
+      "price": 400000,
+      "original_price": 500000,
+      "image": "https://giayxshop.vn/wp-content/uploads/2023/03/z4159595927783_c64c2be5885dd21738773ad31d1539ba-600x600.jpg",
+      "description": "mô tả"
+    },
+    {
+      "description": "dsaascsacasdcsadccsacacsacacsa",
+      "image": "[object FileList]",
+      "orinal_price": 595626222,
+      "price": 8000000,
+      "name": "Product F",
+      "id": 5,
+      "original_price": "25625262625"
     }
   ]
 }
