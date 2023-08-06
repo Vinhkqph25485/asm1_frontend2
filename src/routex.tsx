@@ -7,6 +7,8 @@ import LayoutAdmin from "./components/admin/LayoutAdmin";
 import ListPage from "./features/product/page/ListPage";
 import AddPage from "./features/product/page/AddPage";
 import EditPage from "./features/product/page/EditPage";
+import SignUp from "./features/auth/page/Signup";
+import SignIn from "./features/auth/page/Signin";
 
 
 export const router = createBrowserRouter([
@@ -34,11 +36,11 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/signin",
-                element: <div>signin</div>,
+                element: <SignIn/>,
             },
             {
                 path:"/signup",
-                element: <div>signup</div>,
+                element: <SignUp/>,
             },
         ],
     },

@@ -25,7 +25,7 @@ const ListProduct = () => {
 
                 <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {products?.map((item: IProduct) => (
-                        <li>                     
+                        <li key={item.id}>                     
                             <Link to={`/products/${item.id}`} className="group relative block overflow-hidden">
                                 <img
                                     src= {item.image}

@@ -13,16 +13,19 @@ import {
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import productApi, { productReducer } from "@/api/product";
 import { cartReducer } from "@/features/cart/cartSlice";
+import { authReducer } from "@/api/auth";
 
 // Cấu hình persist ( lưu localStorage )
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['products', 'counter']
+    blacklist: ['products', 'auth']
 }
 const rootReducer = combineReducers({
     products: productReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    users: authReducer,
+    
 })
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

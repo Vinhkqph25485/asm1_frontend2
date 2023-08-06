@@ -1,7 +1,27 @@
 import { Link } from "react-router-dom";
 import Menu from "./Menu"; 
 
+
+import { useState } from "react";
+
+interface User {
+    name: string;
+}
+
 const Header = () => {
+    const [loggedIn, setLoggedIn] = useState<User | null>(() => {
+        const user = localStorage.getItem('user');
+        return user ? JSON.parse(user) : null;
+    });
+    
+
+    const handleLogout = () => {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+        setLoggedIn(null)
+    };
+    console.log("local", localStorage.getItem('user'))
+    
     return (
         <header className="bg-gray-50 sticky-header sticky top-0 z-50">
             <div className="mx-auto max-w-screen-xl px-4 py-4">
@@ -12,7 +32,14 @@ const Header = () => {
                         </p>
                     </div>
                     <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-                        <button
+                    {loggedIn ? (
+                            <>
+                                <div className="text-white me-3">Xin chào : {loggedIn.name}</div>
+                                <button onClick={handleLogout} className="btn btn-primary ms-3 " style={{ marginRight: "30px" }} > Logout</button>
+                            </>
+                        ) : (
+                            <>
+                                <button
                             className="block rounded-lg bg-teal-500 px-5 py-3 text-sm font-medium text-white transition hover:bg-teal-700 focus:outline-none focus:ring"
                             type="button"
                         >
@@ -25,6 +52,9 @@ const Header = () => {
                         >
                              <Link to={"/signup"}>Đăng kí</Link>
                         </button>
+                            </>
+                        )}
+                       
                     </div>
                 </div>
             </div>

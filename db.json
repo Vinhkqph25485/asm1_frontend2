@@ -41,5 +41,24 @@
       "id": 5,
       "original_price": "25625262625"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "email": "vinh122@gmail.com",
+      "password": "$2a$10$jRMiLJtCCLo4X6/u2uXGm.cEXxPJlXZO49DfcG.uuraSQFcMGSfnC",
+      "name": "vinhh",
+      "id": 2
+    },
+    {
+      "email": "casc@gcusana.cpm",
+      "password": "$2a$10$/Glmt/fLYsevj7w0nWhQ3OABegww3cPvVyckGN.6wO7Pmy2BAVNci",
+      "id": 3
+    }
   ]
 }
