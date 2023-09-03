@@ -1,9 +1,25 @@
 import { VscAccount } from 'react-icons/vsc'
 import { RiProductHuntLine, RiLogoutBoxRLine } from 'react-icons/ri'
 import { BiCategoryAlt } from 'react-icons/bi'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
+interface User {
+    name: string;
+    email: string
+}
 const Nav = () => {
+    const navigate = useNavigate()
+    const [loggedIn, setLoggedIn] = useState<User | null>(() => {
+        const user = localStorage.getItem('user');
+        return user ? JSON.parse(user) : null;
+      });
+    const handleLogout = () => {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+        setLoggedIn(null);
+        navigate('/')
+      };
     return (
         <div className="flex h-screen flex-col justify-between border-e bg-white">
             <div className="px-4 py-6">
@@ -48,6 +64,7 @@ const Nav = () => {
             <div className="sticky inset-x-0 bottom-0 border-t border-gray-100 bg-white p-2">
                 <form >
                     <button
+                    onClick={() => handleLogout()}
                         type="submit"
                         className="group relative flex w-full justify-center rounded-lg px-2 py-1.5 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                     >

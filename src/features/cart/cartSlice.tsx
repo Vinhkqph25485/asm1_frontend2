@@ -5,6 +5,7 @@ interface Product {
     name: string;
     price: number,
     quantity: number;
+    size?: number
 }
 
 interface CartState {
@@ -21,7 +22,7 @@ const cartSlice = createSlice({
     reducers: {
         add: (state, action: PayloadAction<any>) => {
             const newProduct = action.payload;
-            const existProductIndex = state.items.findIndex(item => item.id === newProduct.id);
+            const existProductIndex = state.items.findIndex(item => item.id === newProduct.id  && item.size === newProduct.size );
             console.log(existProductIndex);
             if (existProductIndex === -1 ) {
                 state.items.push(newProduct);

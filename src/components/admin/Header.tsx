@@ -1,5 +1,22 @@
+import { useGetUsersQuery } from "@/api/auth";
+import { useState } from "react";
 import { AiOutlineSearch, AiOutlineBell } from "react-icons/ai";
+interface User {
+    name: string;
+    email: string
+}
 const Header = () => {
+    const { data, error, isLoading } = useGetUsersQuery();
+    
+   
+    const [loggedIn, setLoggedIn] = useState<User | null>(() => {
+        const user = localStorage.getItem('user');
+        return user ? JSON.parse(user) : null;
+      });
+      
+    
+     
+      const user = data?.find((item: any) => item.email === loggedIn?.email);
     return (
         <header className="bg-gray-50">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
@@ -43,8 +60,8 @@ const Header = () => {
                             />
 
                             <p className="ms-2 hidden text-left text-xs sm:block">
-                                <strong className="block font-medium">Admin</strong>
-                                <span className="text-gray-500">admin@gmail.com</span>
+                                <strong className="block font-medium">{user?.name}</strong>
+                                <span className="text-gray-500">{user?.email}</span>
 
                             </p>
                         </button>

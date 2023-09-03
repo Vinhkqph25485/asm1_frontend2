@@ -18,7 +18,7 @@ const authApi = createApi({
         
         Signin: builder.mutation({
             query: (user: IAuth) => ({
-                url: `/users/signin`,
+                url: `/signin`,
                 method: "POST",
                 body: user
             }),
@@ -26,18 +26,25 @@ const authApi = createApi({
         }),
         Signup: builder.mutation({
             query: (user: IAuth) => ({
-                url: `/users/signup`,
+                url: `/signup`,
                 method: "POST",
                 body: user
             }),
             invalidatesTags: ['Users']
         }),
+
+        getUsers: builder.query<IAuth[], void>({
+            query: () => `/users`,
+            providesTags: ['Users']
+        }),
         
     })
 })
 export const { 
+    useGetUsersQuery,
     useSigninMutation,
     useSignupMutation,
+    
  } = authApi;
 export const authReducer = authApi.reducer;
 export default authApi;

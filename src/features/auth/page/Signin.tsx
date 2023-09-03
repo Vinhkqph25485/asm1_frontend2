@@ -10,19 +10,20 @@ import { useSigninMutation } from "@/api/auth";
 const SignIn = () => {
     const notify = () => toast("Đăng nhập thành công");
     const navigate = useNavigate();
-    const [Signin, { isLoading }] = useSigninMutation()
+    const [Signin] = useSigninMutation()
     const { register, handleSubmit, formState: { errors } } = useForm<SigninForm>({
         resolver: yupResolver(schemaSignIn)
     })
     const OnHandleSubmit = async (user: SigninForm) => {
         try {
             await Signin(user);
-              localStorage.setItem('user', JSON.stringify(user));
+            localStorage.setItem('user', JSON.stringify(user));
             toast.success('Đăng nhập thành công!', {
                 position: toast.POSITION.TOP_RIGHT,
             });
             setTimeout(() => {
                 navigate("/")
+                location.reload()
             }, 3000)
         } catch (error) {
             alert("Thông tin tài khoản hoặc mật khẩu không chính xác !")

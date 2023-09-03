@@ -51,14 +51,21 @@
     },
     {
       "email": "vinh122@gmail.com",
-      "password": "$2a$10$jRMiLJtCCLo4X6/u2uXGm.cEXxPJlXZO49DfcG.uuraSQFcMGSfnC",
+      "password": "$2a$10$vbQ8T4H8Rrv8kq60Q5q8NuqMDOk18Yg8qmI4qXKPSRsxo1OV4XkaO",
       "name": "vinhh",
       "id": 2
     },
     {
-      "email": "casc@gcusana.cpm",
-      "password": "$2a$10$/Glmt/fLYsevj7w0nWhQ3OABegww3cPvVyckGN.6wO7Pmy2BAVNci",
+      "email": "vinhkqph25485@fpt.edu.vn",
+      "password": "$2a$10$2U34brAPvoIg9.U9jrfLZ.5PY2gg0L4Wefv2UZLXdwH3.XsUm/tRO",
+      "name": "KieuQuangVinh fplhn",
       "id": 3
+    },
+    {
+      "email": "junda@gmail.com",
+      "password": "$2a$10$OL3iVxfsSgop11VLm4zqBekGGACbdhOO7XvqkFnC70RcpqgDaWBeq",
+      "name": "Vinh11",
+      "id": 4
     }
   ]
 }

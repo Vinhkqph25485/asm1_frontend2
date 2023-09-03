@@ -12,18 +12,19 @@ import { useSignupMutation } from "@/api/auth";
 const SignUp = () => {
     //   toast("Đăng kí thành công");
     const navigate = useNavigate();
-    const [Signup, { isLoading }] = useSignupMutation()
+    const [Signup] = useSignupMutation()
     const { register, handleSubmit, formState: { errors } } = useForm<SignupForm>({
         resolver: yupResolver(schemaSignUp)
     })
     const onHandleSubmit = async (user: SignupForm) => {
-
+        console.log(user);
+        const newUser = {
+            name: user.name,
+            email: user.email,
+            password: user.password,
+        }
+        
         try {
-            const newUser = {
-                name: user.name,
-                email: user.email,
-                password: user.password,
-            }
             await Signup(newUser)
             toast.success('Đăng kí thành công!', {
                 position: toast.POSITION.TOP_RIGHT,
